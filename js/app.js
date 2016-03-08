@@ -1,7 +1,7 @@
 $(document).ready(function() {
 	function getImage() {
-		var xhr = $.get("http://api.giphy.com/v1/gifs/search?q=rain&api_key=dc6zaTOxFJmzC&limit=200");
-		xhr.done(function(data) {
+		$.get("http://api.giphy.com/v1/gifs/search?q=rain&api_key=dc6zaTOxFJmzC&limit=200")
+		.done(function(data) {
 			console.log("success got data", data.data[0].images.downsized_medium.url);
 			console.log(data);
 
@@ -12,9 +12,7 @@ $(document).ready(function() {
 			console.log("Assigned imageData as" + imageData);
 
 			// Append the GIF to the view
-			$('.render-weather').append(
-				("<img style=\"width: inherit; \" src = " + imageData + " / > ")
-				);
+			$('.render-weather').css("background-image", "url(" + imageData + ")");
 		});
 	};
 	getImage();

@@ -28,7 +28,7 @@ h1 {
 }
 
 .location-top {
-	padding-top: 15px;
+	padding-top: 50px;
 	text-align: center;
 	z-index: 10;
 	font-family: helvetica;
@@ -49,9 +49,17 @@ h1 {
 .render-weather {
 	/* background-image: url('../images/rain-temp.png'); */
 	margin: 0 auto;
-	width: 100%;
+	/* width: 100%; */
+	height: 100%;
 	/* height: 450px; */
 	overflow-y: hidden;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center center;
+}
+
+.render-weather img {
+	height: 100%;
 }
 
 .button-background {
