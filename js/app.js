@@ -1,11 +1,11 @@
 $(document).ready(function() {
 	function getImage() {
-		$.get("http://api.giphy.com/v1/gifs/search?q=rain&api_key=dc6zaTOxFJmzC&limit=200")
+		$.get("http://api.giphy.com/v1/gifs/search?q=rain&api_key=dc6zaTOxFJmzC&limit=500")
 		.done(function(data) {
 			console.log("success got data", data.data[0].images.downsized_medium.url);
 			console.log(data);
 
-			var num = Math.floor((Math.random() * 100));
+			var num = Math.floor((Math.random() * 490));
 			console.log("Num is " + num)
 
 			var imageData = data.data[num].images.downsized_medium.url;
