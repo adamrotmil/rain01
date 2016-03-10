@@ -1,0 +1,35 @@
+/*! inputizer 2014-11-21 */
+
+.inputized {
+  font-family: Roboto;
+  font-weight: 300;
+  color: #ADCCED;
+  outline: none;
+  position: relative;
+  cursor: pointer; 
+}
+
+.inputized:hover {
+  color: white;
+}
+
+.inputized br {
+  display: none; 
+}
+
+.inputized * {
+  display: inline; 
+}
+
+.inputized:focus {
+  padding: 5px 20px;
+  cursor: text; 
+}
+
+.inputized:hover:before {
+  opacity: 1; 
+}
+
+.inputized:focus:hover:before {
+  display: none; 
+}
