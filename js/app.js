@@ -28,14 +28,28 @@ $(document).ready(function() {
 				keyword = "rain"
 			} else if (data.currently.icon == "partly-cloudy-night") {
 				keyword = "clouds"
+			} else if (data.currently.icon == "partly-cloudy-day") {
+				keyword = "clouds"
+			} else if (data.currently.icon == "clear-day") {
+				keyword = "sunny"
+			} else if (data.currently.icon == "snow") {
+				keyword = "snow"
+			} else if (data.currently.icon == "sleet") {
+				keyword = "sleet"
+			} else if (data.currently.icon == "wind") {
+				keyword = "windy"
+			} else if (data.currently.icon == "fog") {
+				keyword = "fog"
+			} else if (data.currently.icon == "cloudy") {
+				keyword = "cloud"
 			} else {
 				keyword = "weather"
 			};
 			console.log(data.currently.icon);
 			// get the GIF
-			$.get("http://api.giphy.com/v1/gifs/search?q=" + keyword + "&api_key=dc6zaTOxFJmzC&limit=500")
+			$.get("http://api.giphy.com/v1/gifs/search?q=" + keyword + "&api_key=dc6zaTOxFJmzC&limit=1000")
 			.done(function(data) {
-				var num = Math.floor((Math.random() * 490));
+				var num = Math.floor((Math.random() * 999));
 				var imageData = data.data[num].images.downsized_medium.url;
 				// Append the GIF to the view
 				$('.render-weather').fadeTo(2000, 0.1, function()
@@ -57,8 +71,10 @@ $(document).ready(function() {
 
 //////////////////////////////////////////////////////////////// To Do List /////////////////////////////////////////////////////////////////////
 // 
-// - Social Buttons
-// - Set up views where you can store a list of "favorite" cities that you want to know the weather about.
+// -- Social Buttons
+// -- Set up views where you can store a list of "favorite" cities that you want to know the weather about.
+// -- Current lat and long of device for default city name
+// -- Reverse geolocation (step two of above)
 // --- DONE --- Inline editing of city name (adjust the styling of this)
 // --- DONE --- Set up the weather API to detect rain in a given location and have it trigger the GIF.
 // --- DONE --- Convert a city name string into LAT and LONG for getWeather()
